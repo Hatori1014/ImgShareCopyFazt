@@ -54,6 +54,8 @@ ctrl.like = (req, res) => {
 };
 
 ctrl.comment = (req, res) => {
+  console.log(req.body);
+  res.send('Comment');
 
 };
 
