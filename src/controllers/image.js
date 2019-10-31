@@ -11,8 +11,8 @@ const ctrl = {};
 
 ctrl.index = async (req, res) => {
   const image = await Image.findOne({filename: {$regex: req.params.image_id}});
-  console.log(image);
-  res.render('image', {image});
+  const comments = await Comment.find({image_id: image._id});
+  res.render('image', {image, comments});
 };
 
 ctrl.create = (req, res) => {
@@ -63,8 +63,6 @@ ctrl.comment = async (req, res) => {
       await newComment.save();
       res.redirect('/images/' + image.uniqueId);
     }
-  
-
 };
 
 ctrl.remove = (req, res) => {
