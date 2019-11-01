@@ -34,11 +34,10 @@
     <h3>Comments</h3>
     <button class="btn btn-info" id="btn-toogle-comment">
       <i class="fa fa-comment-o"></i>Post a Comment
-
     </button>
   </div>
   <div class="card-body">
-    <blockquote>
+    <blockquote id="post-comment">
       <form action="/images/{{ image.uniqueId }}/comment" method="post">
         
         <div class="form-group">
